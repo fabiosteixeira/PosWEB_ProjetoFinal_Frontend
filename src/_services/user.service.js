@@ -67,6 +67,7 @@ function create(nome, email, password) {
     return fetch(`${config.apiUrl}/user/create/`, requestOptions)
         .then(handleResponse)
         .then(user => {
+            localStorage.setItem('createdUser', JSON.stringify(user));
             return user;
         });
 }
