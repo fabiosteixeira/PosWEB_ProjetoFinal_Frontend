@@ -41,7 +41,7 @@ function create(nome, email, password) {
                 user => { 
                     dispatch(success(user));
                     history.push('/');
-                    dispatch(alertActions.success('Usuário criado com sucesso. Faça login com suas credenciais.'))
+                    dispatch(alertActions.success(`Usuário ${user.nome} criado com sucesso. Faça login com suas credenciais.`))
                 },
                 error => {
                     dispatch(failure(error));
