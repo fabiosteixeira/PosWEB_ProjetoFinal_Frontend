@@ -7,7 +7,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "./node_modules/webpack/bin/webpack.js -p --progress && node server.js",    
+    "dev": "webpack-dev-server --open"
   },
   "dependencies": {
     "axios": "^0.19.2",
