@@ -3,5 +3,9 @@
     "react",
     "env",
     "stage-0"
+  ],
+
+  "plugins": [
+    "styled-jsx/babel"
   ]
 }

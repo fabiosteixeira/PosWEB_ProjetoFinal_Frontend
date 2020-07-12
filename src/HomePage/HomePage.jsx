@@ -12,7 +12,7 @@ class HomePage extends React.Component {
     render() {
         const { user, users } = this.props;
         return (
-            <div className="col-md-6 col-md-offset-3">
+            <div className="d-flex justify-content-center">
                 <h1>Hi {user.name}!</h1>
                 <p>You're logged in with React & JWT!!</p>
                 <h3>Users from secure api end point:</h3>
@@ -30,6 +30,12 @@ class HomePage extends React.Component {
                 <p>
                     <Link to="/login">Logout</Link>
                 </p>
+
+            <style jsx>{`
+                p {
+                    color: red;
+                  }
+            `}</style>
             </div>
         );
     }
