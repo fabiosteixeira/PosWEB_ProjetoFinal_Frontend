@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { history } from '../_helpers';
-import { alertActions } from '../_actions';
-import ApplicationRoutes from '../ApplicationRoutes';
+import { history } from '../../_helpers';
+import { alertActions } from '../../_actions';
+import ApplicationRoutes from '../../ApplicationRoutes';
 
 class App extends React.Component {
     constructor(props) {

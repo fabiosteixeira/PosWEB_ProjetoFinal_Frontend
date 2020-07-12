@@ -2,9 +2,7 @@ import React from "react";
 import { Router, Route } from "react-router-dom";
 import { PrivateRoute } from './_components';
 
-import { LoginPage } from './LoginPage';
-import { SigninPage } from './SigninPage';
-import { HomePage } from './HomePage';
+import { LoginPage, SigninPage, HomePage } from './_views';
 import { history } from './_helpers';
 
 // export const ApplicationRoutes = () => (

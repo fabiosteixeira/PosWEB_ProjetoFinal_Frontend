@@ -3,6 +3,7 @@ import { authHeader } from '../_helpers';
 
 export const userService = {
     login,
+    create,
     logout,
     getAll
 };
@@ -52,6 +53,24 @@ function login(username, password) {
     // });
 }
 
+function create(nome, email, password) {
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+                        "nome": nome,
+                        "email": email,
+                        "password": password
+                        })
+    };
+
+    return fetch(`${config.apiUrl}/user/create/`, requestOptions)
+        .then(handleResponse)
+        .then(user => {
+            return user;
+        });
+}
+
 function logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('user');
@@ -69,8 +88,6 @@ function getAll() {
 function handleResponse(response) {
     return response.text().then(text => {
         const data = text && JSON.parse(text);
-        console.log('aqui')
-        console.log(data)
         if (!response.ok || data['eherro']) {
             if (response.status === 401) {
                 // auto logout if 401 response returned from api

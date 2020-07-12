@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { userActions } from '../_actions';
+import { userActions } from '../../_actions';
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -19,7 +18,6 @@ class LoginPage extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleSubmitCadastro = this.handleSubmitCadastro.bind(this);
     }
 
     handleChange(e) {
@@ -38,12 +36,6 @@ class LoginPage extends React.Component {
         }
     }
 
-    handleSubmitCadastro(e) {
-        e.preventDefault();
-
-
-    }
-
     render() {
         const { loggingIn } = this.props;
         const { username, password, submitted } = this.state;
@@ -53,30 +45,26 @@ class LoginPage extends React.Component {
                     <form name="form" onSubmit={this.handleSubmit} >
                         <h2 className="d-flex justify-content-center">Controlar finanças</h2>
                         <div className={'form-group' + (submitted && !username ? ' has-error' : '')}>
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username">Email</label>
                             <input type="text" className="form-control" name="username" value={username} onChange={this.handleChange} />
                             {submitted && !username &&
-                                <div className="help-block">Username is required</div>
+                                <div className="help-block">Email é um campo obrigatório</div>
                             }
                         </div>
                         <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
-                            <label htmlFor="password">Password</label>
+                            <label htmlFor="password">Senha</label>
                             <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} />
                             {submitted && !password &&
-                                <div className="help-block">Password is required</div>
+                                <div className="help-block">Senha é um campo obrigatório</div>
                             }
                         </div>
                         <div className="form-group d-flex justify-content-center">
                             <button className="btn btn-primary">Login</button>
                         </div>
-                    </form>                
-                </div>
-                <div className="d-flex justify-content-center">    
-                    <form name="form" onSubmit={this.handleSubmitCadastro} >
-                        <div className="form-group d-flex justify-content-center">
-                            <button className="btn btn-primary">Cadastrar-se</button>
-                        </div>
-                    </form> 
+                    </form>                                    
+                </div>                
+                <div className="d-flex justify-content-center">
+                <a className="btn btn-primary" href="/signin" role="button">Cadastre-se</a>
                 </div>
             </div>
         );
