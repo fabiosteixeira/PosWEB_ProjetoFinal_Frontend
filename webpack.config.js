@@ -27,8 +27,8 @@ module.exports = {
     externals: {
         // global app config object
         config: JSON.stringify({
-            apiUrl: 'http://localhost:8000'
-            // apiUrl: 'https://trab-final-pos-backend.herokuapp.com'
+            // apiUrl: 'http://localhost:8000'
+            apiUrl: 'https://trab-final-pos-backend.herokuapp.com'
         })
     }
 }
