@@ -17,9 +17,13 @@ function Menu (props) {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <NavDropdown title="Operações" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/despesa">Despesas</NavDropdown.Item>
-                            <NavDropdown.Item href="/receita">Receitas</NavDropdown.Item>
+                        <NavDropdown title="Despesas" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="/detaildespesa">Nova despesa</NavDropdown.Item>
+                            <NavDropdown.Item href="/despesa">Lista de despesas</NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown title="Receitas" id="basic-nav-dropdown">
+                            <NavDropdown.Item href="/detailreceita">Nova receita</NavDropdown.Item>
+                            <NavDropdown.Item href="/receita">Lista de receitas</NavDropdown.Item>
                         </NavDropdown>
                         </Nav>
                         <div className="nomeUser">Bem-vindo, {user.name}</div>

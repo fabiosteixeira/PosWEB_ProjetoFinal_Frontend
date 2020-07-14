@@ -23,9 +23,9 @@ function ApplicationRoutes () {
             <div>
                 <PrivateRoute exact path="/" component={HomePage} />
                 <PrivateRoute exact path="/despesa" component={DespesaPage} />
-                <PrivateRoute exact path="/novadespesa" component={NovaDespesaPage} />
+                <PrivateRoute exact path="/detaildespesa" component={NovaDespesaPage} />
                 <PrivateRoute exact path="/receita" component={ReceitaPage} />
-                <PrivateRoute exact path="/novareceita" component={NovaReceitaPage} />
+                <PrivateRoute exact path="/detailreceita" component={NovaReceitaPage} />
                 <Route path="/signin" component={SigninPage} />
                 <Route path="/login" component={LoginPage} />
             </div>

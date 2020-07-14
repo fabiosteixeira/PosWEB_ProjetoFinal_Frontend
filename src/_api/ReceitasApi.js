@@ -2,14 +2,14 @@ const axios = require('axios')
 import config from 'config'
 import { authHeader } from '../_helpers';
 
-export class DespesasApi {
+export class ReceitasApi {
 
-    static getDespesas(){
+    static getReceitas(){
         return new Promise((resolve, reject) => {
             let responseJson = {}
             axios({
                 method: 'get',
-                url: `${config.apiUrl}/despesa/`,
+                url: `${config.apiUrl}/receita/`,
                 headers: authHeader()
             })
                 .then(function(response){
@@ -22,12 +22,12 @@ export class DespesasApi {
         });
     }
 
-    static getDespesa(id){
+    static getReceita(id){
         return new Promise((resolve, reject) => {
             let responseJson = {}
             axios({
                 method: 'get',
-                url: `${config.apiUrl}/despesa/${id}/`,
+                url: `${config.apiUrl}/receita/${id}/`,
                 headers: authHeader()
             })
                 .then(function(response){
@@ -40,14 +40,14 @@ export class DespesasApi {
         });
     }
 
-    static sendDespesa(id, descricao, classificacao, dtvencimento, dtpagamento, valor){
+    static sendReceita(id, descricao, classificacao, dtexpectativa, dtrecebimento, valor){
         return new Promise((resolve, reject) => {
             let responseJson = {}
             let urlDestino
             if (id != null && id != "")
-                urlDestino = `${config.apiUrl}/despesa/${id}/`
+                urlDestino = `${config.apiUrl}/receita/${id}/`
             else
-                urlDestino = `${config.apiUrl}/despesa/`
+                urlDestino = `${config.apiUrl}/receita/`
             axios({
                 method: 'post',
                 url: urlDestino,
@@ -56,10 +56,10 @@ export class DespesasApi {
                     "id": id,
                     "descricao": descricao,
                     "classificacao": classificacao,
-                    "data_vencimento": dtvencimento,
-                    "data_pagamento": dtpagamento,
+                    "data_expectativa": dtexpectativa,
+                    "data_recebimento": dtrecebimento,
                     "valor": valor,
-                    "formaPagamento": "",
+                    "formaRecebimento": "",
                     "situacao": "",
                     }
             }).then(function(response){
@@ -73,12 +73,12 @@ export class DespesasApi {
         });
     }
 
-    static deletaDespesa(id) {
+    static deletaReceita(id) {
         return new Promise((resolve, reject) => {
             let responseJson = {}
             axios({
                 method: 'delete',
-                url: `${config.apiUrl}/despesa/${id}/`,
+                url: `${config.apiUrl}/receita/${id}/`,
                 headers: authHeader()
             })
                 .then(function(response){
