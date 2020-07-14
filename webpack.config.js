@@ -51,8 +51,8 @@ module.exports = {
     externals: {
         // global app config object
         config: JSON.stringify({
-            // apiUrl: 'http://192.168.99.33:8001'
-            apiUrl: 'http://trab-final-pos-backend.herokuapp.com'
+            apiUrl: 'http://192.168.99.33:8001'
+            // apiUrl: 'http://trab-final-pos-backend.herokuapp.com'
         })
     },
     entry: APP_DIR + '/index.jsx',

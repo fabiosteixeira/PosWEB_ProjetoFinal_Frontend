@@ -5,10 +5,6 @@ import { connect } from 'react-redux';
 import { userActions } from '../../_actions';
 
 class HomePage extends React.Component {
-    componentDidMount() {
-        // this.props.dispatch(userActions.getAll());
-    }
-
     render() {
         const { user, users } = this.props;
         return (
