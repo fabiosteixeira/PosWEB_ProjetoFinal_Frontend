@@ -3,7 +3,7 @@
   "short_name": "Finanças",
   "theme_color": "#a28324",
   "background_color": "#00599f",
-  "display": "browser",
+  "display": "minimal-ui",
   "Scope": "/",
   "start_url": "/",
   "icons": [

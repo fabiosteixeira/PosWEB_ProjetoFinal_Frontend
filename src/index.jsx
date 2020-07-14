@@ -6,11 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { store } from './_helpers';
 import { App } from './_views';
 
-import { registerServiceWorker } from './RegisterServiceWorker'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-registerServiceWorker()
 
 render(
     <Provider store={store}>
@@ -20,3 +16,16 @@ render(
     </Provider>,
     document.getElementById('app')
 );
+
+ if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+        console.log('SW registered: ', registration);
+        }).catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+        });
+    });
+    }
+else
+    console.log('Não existe suporte para serviceWorker.')
