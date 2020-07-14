@@ -6,7 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 import { store } from './_helpers';
 import { App } from './_views';
 
+import { registerServiceWorker } from './RegisterServiceWorker'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+registerServiceWorker()
 
 render(
     <Provider store={store}>
